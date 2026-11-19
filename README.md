@@ -1,5 +1,7 @@
 # dsh-field-notes · DSH 踩坑卡
 
+[![test](https://github.com/w3353239621-tech/dsh-field-notes/actions/workflows/test.yml/badge.svg)](https://github.com/w3353239621-tech/dsh-field-notes/actions/workflows/test.yml)
+
 在 Windows 上把 [DeepSeek Harness](https://github.com/deepseek-ai)（DSH）当日常工具用了一个月，
 把**真踩过、且复发过**的坑写成卡片。**25 张卡，全部来自实际报错。**
 
@@ -59,7 +61,7 @@ Windows 上没有 grep 就用 `Select-String -Path cards\*.md -Pattern "锚点.*
 
 在 `docs/template.md`。核心三条：
 
-1. **目标是 ≤ 2 KB**。这是工具流，不是复盘报告。
+结构由脚本守着：`node scripts/check-cards.mjs` 检查分类前缀、「触发 / 锚点 / 验证」三行、至少 3 个可 grep 的锚点、有没有漏进来的本机路径，CI 每次提交都跑一遍（超 2 KB 只警告，不阻塞）。
 2. **只写复发过的坑**（或代价极大的第一次）。
 3. **锚点行只写会原样出现的字**：中文描述放触发行，锚点写英文/符号/报错原文——否则 grep 命中不了。
 
