@@ -23,7 +23,7 @@ let text=''; for (const f of frames) { try { text += zlib.zstdDecompressSync(f).
 
 ## 现成工具（别再手写一遍）
 
-`scripts/token-audit.mjs`（default-workspace 下，2026-11-14 建）：
+`scripts/token-audit.mjs`（工作区根目录下的 `scripts/`，2026-11-14 建）：
 
 ```bash
 node scripts/token-audit.mjs                      # 最近 30 天，打印每日/工作区/模型/小时/上下文分布
